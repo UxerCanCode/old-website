@@ -1,0 +1,234 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="http://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.css" rel="stylesheet" type="text/css">
+<style>
+*,
+*:before,
+*:after { box-sizing: border-box; }
+
+body {
+  background: indianred;
+  color: white;
+  overflow-x: hidden;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.tiles {
+  position: fixed;
+  z-index: 5;
+  bottom: 0;
+  display: flex;
+  width: 100%;
+}
+
+.tiles-tile {
+  flex: 1;
+  padding: 20px;
+  transition: all .25s ease-out;
+  background: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+.tiles-tile.active:nth-child(1) { background: tomato; }
+
+.tiles-tile.active:nth-child(2) { background: deepskyblue; }
+
+.tiles-tile.active:nth-child(3) { background: lightseagreen; }
+
+.tiles-tile.active:nth-child(4) { background: crimson; }
+
+.tiles-tile:hover:nth-child(1) { background: tomato; }
+
+.tiles-tile:hover:nth-child(2) { background: deepskyblue; }
+
+.tiles-tile:hover:nth-child(3) { background: lightseagreen; }
+
+.tiles-tile:hover:nth-child(4) { background: crimson; }
+
+.content {
+  z-index: 10;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+}
+
+.content-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  padding: 12vw;
+  transform: scale(0);
+  transition: all 0.65s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.content-item.active { transform: scale(1); }
+
+.content-item.active .content-wrap {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.content-item:nth-child(1) {
+  transform-origin: 0% 100%;
+  background: tomato;
+}
+
+.content-item:nth-child(2) {
+  transform-origin: 33% 100%;
+  background: deepskyblue;
+}
+
+.content-item:nth-child(3) {
+  transform-origin: 66% 100%;
+  background: lightseagreen;
+}
+
+.content-item:nth-child(4) {
+  transform-origin: 100% 100%;
+  background: crimson;
+}
+
+.content-item .content-wrap {
+  transform: scale(0.7);
+  opacity: 0;
+  transition: all 0.8s 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* --------------- */
+
+.stuff {
+  margin: 6vw;
+  max-width: 768px;
+}
+
+h2 { font-weight: 300; }
+
+h3 { font-size: 48px; }
+
+p {
+  font-weight: 300;
+  font-size: 24px;
+}
+</style>
+<title>Expanding Fullscreen Tiles Demo Page</title>
+</head>
+
+<body>
+<div class="stuff">
+  <h1>Expanding Fullscreen Tiles Demo Page</h1>
+  <div class="jquery-script-ads"><script type="text/javascript"><!--
+google_ad_client = "ca-pub-2783044520727903";
+/* jQuery_demo */
+google_ad_slot = "2780937993";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></div>
+  <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus architecto aliquid aut harum suscipit similique aspernatur tempora ratione. Velit ad placeat cumque fugit laudantium similique tenetur fuga quisquam, tempora id. </p>
+</div>
+<ul class="tiles">
+  <li class="tiles-tile" data-tile="1">
+    <h2>One</h2>
+  </li>
+  <li class="tiles-tile" data-tile="2">
+    <h2>Two</h2>
+  </li>
+  <li class="tiles-tile" data-tile="3">
+    <h2>Three</h2>
+  </li>
+  <li class="tiles-tile" data-tile="4">
+    <h2>Four</h2>
+  </li>
+</ul>
+<ul class="content">
+  <li class="content-item" id="1">
+    <div class="content-wrap">
+      <h3>Apples</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et reprehenderit nostrum nisi aliquam nemo non fugit, minus, ex ullam vel minima libero, eius labore. Veritatis odit blanditiis quidem amet accusantium.</p>
+    </div>
+  </li>
+  <li class="content-item" id="2">
+    <div class="content-wrap">
+      <h3>Bananas</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae impedit aperiam nemo quos fuga illum porro doloribus quisquam quidem reprehenderit, hic tempora, illo id provident aliquam quo officia ea voluptatum.</p>
+    </div>
+  </li>
+  <li class="content-item" id="3">
+    <div class="content-wrap">
+      <h3>Cucumbers</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias nam nesciunt maiores. Nesciunt explicabo ea deserunt facere sunt, autem, reiciendis nobis, velit accusantium laudantium quis non ratione aspernatur. Eum, doloribus?</p>
+    </div>
+  </li>
+  <li class="content-item" id="4">
+    <div class="content-wrap">
+      <h3>Spinach</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi velit iure expedita quis, blanditiis. Consectetur incidunt distinctio dolor ullam beatae cum maiores quas pariatur amet, temporibus ad commodi dolorem provident.</p>
+    </div>
+  </li>
+</ul>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> 
+<script>
+var tileBtn = $('li.tiles-tile');
+var allContent = $('li.content-item');
+var contentWrap = $('.content-wrap');
+
+tileBtn.on('click touchstart', function() {
+  var self = $(this);
+  var match = self.attr('data-tile');
+  var allContent = $('li.content-item');
+  var content = $('li#' + match);
+  
+  self.toggleClass('active');
+  
+  content.toggleClass('active');
+  
+ contentWrap.css({'transition-delay': '.35s'});
+  
+  return false;
+});
+
+$(window).on('click touchstart', function() {
+  if (allContent.hasClass('active') && tileBtn.hasClass('active')) {
+    allContent.removeClass('active');
+    setTimeout(function() {
+      tileBtn.removeClass('active');
+    }, 400);
+    contentWrap.css({'transition-delay': '.0s'});
+    
+  }
+})
+</script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36251023-1']);
+  _gaq.push(['_setDomainName', 'jqueryscript.net']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</body>
+</html>

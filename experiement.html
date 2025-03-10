@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head class="no-skrollr">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <title>Efrat Weidberg</title>
+  <link href="examples/fixed-positioning.css" rel="stylesheet" type="text/css" />
+	<link href="css/main.css" rel="stylesheet" type="text/css" />
+  <link href="css/style.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+</head>
+<body>
+
+<!-- Navigation with scroll animation -->
+<div id="nav" data-0="opcaity:0.5; height:80px;" data-top-top="position:fixed;top:0; height:40px; opcaity:1;" data-edge-strategy="set">
+	<div class = "center">
+		<a class="navbar-brand text-center" href="#" >
+		<img src="img/logo.png" data-0="width:300px; left:50px;" data-top-top="width:100px; left:150px; top:20px;";/>
+		</a>
+	</div>
+</div>
+<canvas id="scene"></canvas>
+<!-- welcome -->
+
+<!-- canvas animation-->
+
+
+
+<!-- tiles container-->
+<div class="container">
+		<div class="row first">
+	<div id = "hi"> 	<h2> Hi, i’m Efrat Weidberg, a Product Designer and a hands-on Interaction Design Team Lead based in NYC. </h2> </div>
+</div>
+	<div class="row first">
+    <div class="col-sm-4 case1" data-100-top="left:2px; opacity: 1;" data-bottom-top="left:-400px; opacity: 0;" data-50="left:-400px; opacity: 0;">
+        <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
+    </div> <!-- end first div-->
+
+	 	<div class="col-sm-8 case2" data-100-top="left:2px; opacity: 1;" data-bottom-top="left:400px; opacity: 0;" data-50="left:400px; opacity: 0;">
+        <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
+  	</div><!-- end second div-->
+	</div> <!-- end first row div-->
+
+
+
+
+  <div class="row second">
+
+  	<div class="col-sm-4 case1"  data-100-top="left:2px; opacity: 1;" data-bottom-top= "left:-400px; opacity: 0;">
+			<div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
+		</div>
+
+		<div class="col-sm-4 case1" data-100-top="left:2px; opacity: 1;" data-bottom-top= "left:1400px; opacity: 0;">
+			<div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
+		</div>
+
+		<div class="col-sm-4 case1" data-100-top="left:2px; opacity: 1;" data-bottom-top= "left:1400px; opacity: 0;">
+			<div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
+    </div>
+  </div>
+
+
+
+
+  <div class="row">
+
+    <div class="col-sm-4 case4" data-bottom-top="position:absolute;left:-300px; -webkit-transform: rotate(7deg); opacity: 0;" data-100-top=" position:absolute;left:0; opacity: 1; -webkit-transform: rotate(0deg);">
+        <div class="panel-body"><img src="img/case1.png" class="img-responsive" style="width:300px" alt="Image"></div>
+    </div>
+
+		<div class="col-sm-5" data-bottom-top="left:1000px; opacity: 0;" data-100-top="left:400px; opacity: 1;" >
+        	<div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
+		</div>
+
+		<div class="col-sm-4 case4" data-bottom-top="position:absolute;left:1300px; -webkit-transform: rotate(7deg); opacity: 0;" data-100-top="position:absolute;left:890px; opacity: 1; -webkit-transform: rotate(0deg);">
+				<div class="panel-body"><img src="img/case1.png" class="img-responsive" style="width:300px" alt="Image"></div>
+		</div>
+
+
+    </div>
+
+
+		<div class="row">
+
+	    <div class="col-sm-4 case4" data-bottom-top="position:absolute;left:-300px; -webkit-transform: rotate(45deg); opacity: 0;" data-100-top=" position:absolute;left:0; opacity: 1; -webkit-transform: rotate(0deg);">
+	        <div class="panel-body"><img src="img/case1.png" class="img-responsive" style="width:300px" alt="Image"></div>
+	    </div>
+
+			<div class="col-sm-5" data-bottom-top="left:1000px; opacity: 0;" data-100-top="left:400px; opacity: 1;" >
+	        	<div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
+			</div>
+
+			<div class="col-sm-4 case4" data-bottom-top="position:absolute;left:1300px; -webkit-transform: rotate(45deg); opacity: 0;" data-100-top="position:absolute;left:890px; opacity: 1; -webkit-transform: rotate(0deg);">
+					<div class="panel-body"><img src="img/case1.png" class="img-responsive" style="width:300px" alt="Image"></div>
+			</div>
+
+
+	    </div>
+
+</div><!-- end first contaier-->
+
+
+
+
+<script type="text/javascript" src="src/skrollr.js"></script>
+<script type="text/javascript">
+var s = skrollr.init();
+</script>
+<!-- <script type="text/javascript">
+
+
+
+window.onload = function() {
+	skrollr.init({
+		forceHeight: false
+	});
+}
+</script> -->
+
+
+<script>
+//create the canvas stage
+var canvas = document.querySelector("#scene"),
+	ctx = canvas.getContext("2d"),
+	particles = [],  //the particles object
+	amount = 0,
+	mouse = {
+		x: 0,
+		y: 0
+	},
+	radius = 0.7; //Init radius of the force field
+
+// var colors = ["rgba(23, 253, 192, 5)","rgba(70, 107, 255, 8", "rgba(214, 10, 47, 6)"];
+
+var colors = ["rgba(23, 253, 192, 5)"];
+
+
+var colorsTwo = ["rgba(23, 253, 192, 1)"];
+
+var copy = "OH Hello ☻ ☕ ♥"; // Text to display
+
+var initSize = Math.floor(Math.random() * .6) + 1  ;
+var hoverSize = initSize + .2;
+
+var ww = canvas.width = window.innerWidth;
+var wh = canvas.height = window.innerHeight;
+
+function Particle(x, y) {
+	this.x = Math.random() * ww;
+	this.y = Math.random() * wh;
+	this.dest = {
+		x: x,
+		y: y
+	};
+	//this.r = Math.random() * 1; // the size of bubbles
+	this.vx = (Math.random() - 0.5) * 5;
+	this.vy = (Math.random() - 0.5) * 5;
+	this.accX = 0;
+	this.accY = 0;
+	this.friction = Math.random() * 0.005 + 0.94; // force of bounce, just try to change 0.015 to 0.5
+
+	//this.color = colors[Math.floor(Math.random() * 10)];
+	//this.colorTwo = colorsTwo[Math.floor(Math.random() * 10)];
+
+}
+
+Particle.prototype.render = function() {
+
+	this.accX = (this.dest.x - this.x) / 500; //acceleration for X
+	this.accY = (this.dest.y - this.y) / 500; //acceleration for Y
+	this.vx += this.accX;
+	this.vy += this.accY;
+	this.vx *= this.friction;
+	this.vy *= this.friction;
+
+	this.x += this.vx;
+	this.y += this.vy;
+
+	ctx.fillStyle = this.color;
+	ctx.beginPath();
+	ctx.arc(this.x, this.y, this.r, Math.PI * 2, false);
+	ctx.fill();
+
+	var a = this.x - mouse.x;
+	var b = this.y - mouse.y;
+
+	var distance = Math.sqrt(a * a + b * b);
+	if (distance < (radius * 70)) {
+		this.accX = (this.x - mouse.x) / 5; //acceleration on mouseover X, smaller faster
+		this.accY = (this.y - mouse.y) / 10; //acceleration on mouseover Y, smaller faster
+		this.vx += this.accX;
+		this.vy += this.accY;
+		//ctx.fillStyle = this.colorTwo;
+	}
+
+	if (distance < (radius * 70)) {
+		this.colorTwo = colorsTwo[Math.floor(Math.random() * 10)];
+		ctx.fillStyle = this.colorTwo;
+		this.r = hoverSize; // the size of bubbles
+	}
+
+	if (distance > (radius * 70)) {
+		this.colorOne = colors[Math.floor(Math.random() * 10)];
+		ctx.fillStyle = this.colorOne;
+		this.r = initSize
+	}
+
+}
+
+function onMouseMove(e) {
+	mouse.x = e.clientX;
+	mouse.y = e.clientY;
+}
+
+function initScene() {
+	ww = canvas.width = window.innerWidth;
+	wh = canvas.height = window.innerHeight;
+
+	ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+	ctx.font = "bold " + (ww / 10) + "px sans-serif"; // Size of the text
+	ctx.textAlign = "center";
+	ctx.fillText(copy, ww / 2, wh / 2); //Centering
+
+	var data = ctx.getImageData(0, 0, ww, wh).data;
+	ctx.clearRect(0, 0, canvas.width, canvas.height);
+	ctx.globalCompositeOperation = "screen";
+
+	particles = []; // create the particles object
+	for (var i = 0; i < ww; i += Math.round(ww / 500)) { //400 here represents the amount of particles
+		for (var j = 0; j < wh; j += Math.round(ww / 500)) {
+			if (data[((i + j * ww) * 4) + 3] > 250) {
+				particles.push(new Particle(i, j));
+			}
+		}
+	}
+	amount = particles.length;
+
+}
+
+function onMouseClick() {
+	radius = 1; //onclick expand radius
+
+}
+
+function offMouseClick() {
+	radius = 0.5; //offClick init radius
+}
+
+function delayedInitRadius() {
+    setTimeout(offMouseClick, 500); //delay for offClick init radius
+}
+
+function render(a) {
+	requestAnimationFrame(render);
+	ctx.clearRect(0, 0, canvas.width, canvas.height);
+	for (var i = 0; i < amount; i++) {
+		particles[i].render();
+	}
+};
+
+window.addEventListener("resize", initScene);
+window.addEventListener("mousemove", onMouseMove);
+window.addEventListener("mousedown", onMouseClick);
+window.addEventListener("mouseup", delayedInitRadius);
+initScene();
+requestAnimationFrame(render);
+
+
+</script>
+
+</body>
+
+</html>
